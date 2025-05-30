@@ -1,0 +1,18 @@
+{application, em_discord_bot,
+ [{description, "Emergence client as a discord bot"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {em_discord_bot_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    inets,
+    jsx,
+    embryo
+   ]},
+  {env, []},
+  {modules, [em_discord_bot_app, em_discord_bot_commands]},
+  {licenses, ["Apache 2.0"]},
+  {links, [{"GitHub", "https://github.com/EmergenceSystem/em_discord_bot"}]}
+ ]
+}.
