@@ -1,7 +1,7 @@
 -module(em_discord_bot_commands).
 -export([handle_message/4]).
 
--include_lib("embryo/src/embryo.hrl").
+-include_lib("embryo/include/embryo.hrl").
 
 %%--------------------------------------------------------------------
 %% Main message handler
