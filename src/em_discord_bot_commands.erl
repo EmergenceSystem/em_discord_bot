@@ -38,8 +38,14 @@ format_message(Embryos) ->
 %% HTTP query
 %%====================================================================
 
+
+get_disco_url() ->
+    case os:getenv("server_url") of
+        false -> application:get_env(em_discord_bot, disco_url, "http://localhost:8080");
+        Url   -> Url
+    end.
 query(Body) ->
-    ServerUrl = embryo:get_em_disco_url(),
+    ServerUrl = get_disco_url(),
     Url       = ServerUrl ++ "/query",
     Headers   = [{"content-type", "application/json"}],
     case httpc:request(post, {Url, Headers, "application/json", Body},
